@@ -17,3 +17,6 @@ Build and start Theia
    cd app &&
    yarn start
 ```
+
+References:  
+[Theia & Xtext Example](https://github.com/theia-ide/theia-xtext)

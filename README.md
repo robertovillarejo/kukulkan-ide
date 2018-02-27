@@ -1,12 +1,12 @@
 # Theia & Xtext Example
 
-A Theia Application with an Xtext-based Language Server extension.
+A Theia Application with an Xtext-based Language Server extension for the Kukulkan DSL.
 
 ## Build and Run
 
 Build the language server
 ```
-  cd xtext-dsl-language-server &&
+  cd mx.infotec.dads.kukulkan.parent &&
   ./gradlew shadowJar &&
   cd ..
 ```

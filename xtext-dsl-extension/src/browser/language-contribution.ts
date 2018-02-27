@@ -4,8 +4,8 @@ import { Workspace, Languages, LanguageClientFactory, BaseLanguageClientContribu
 @injectable()
 export class DslClientContribution extends BaseLanguageClientContribution {
 
-    readonly id = "dsl";
-    readonly name = "DSL";
+    readonly id = "kukulkan";
+    readonly name = "Kukulkan";
 
     constructor(
         @inject(Workspace) protected readonly workspace: Workspace,
@@ -17,7 +17,7 @@ export class DslClientContribution extends BaseLanguageClientContribution {
 
     protected get globPatterns() {
         return [
-            '**/*.dsl'
+            '**/*.3k'
         ];
     }
 }
@@ -28,12 +28,12 @@ registerDSL();
 export function registerDSL() {
     // initialize monaco
     monaco.languages.register({
-        id: 'dsl',
-        aliases: ['DSL', 'dsl'],
-        extensions: ['.dsl'],
-        mimetypes: ['text/dsl']
+        id: 'kukulkan',
+        aliases: ['Kukulkan', 'kukulkan'],
+        extensions: ['.3k'],
+        mimetypes: ['text/kukulkan']
     })
-    monaco.languages.setLanguageConfiguration('dsl', {
+    monaco.languages.setLanguageConfiguration('kukulkan', {
         comments: {
             lineComment: "//",
             blockComment: ['/*', '*/']
@@ -47,26 +47,21 @@ export function registerDSL() {
             {
                 open: '(',
                 close: ')'
-            },
-            {
-                open: '<',
-                close: '>'
-            }]
+            }
+        ]
     })
-    monaco.languages.setMonarchTokensProvider('dsl', <any>{
+    monaco.languages.setMonarchTokensProvider('kukulkan', <any>{
         // Set defaultToken to invalid to see what you do not tokenize yet
         // defaultToken: 'invalid',
 
         keywords: [
-            'entity', 'minlength'
+            'entity', 'minlength', 'maxlength', 'min', 'max', 'minbytes', 'maxbytes', 'required', 'pattern'
         ],
 
         typeKeywords: [
-            'String', 'Date'
         ],
 
         operators: [
-            ':'
         ],
 
         // we include these common regular expressions

@@ -18,10 +18,10 @@ export default new ContainerModule(bind => {
 class DSLContribution extends BaseLanguageServerContribution {
 
     readonly id = "kukulkan";
-    readonly name = "Kukulkan";
+    readonly name = "kukulkan";
 
     start(clientConnection: IConnection): void {
-        const jar = path.resolve(__dirname, '../../build/mx.infotec.dads.kukulkan.ide-1.0.0-SNAPSHOT-ls.jar');
+        const jar = path.resolve(__dirname, '../../build/dsl-ls.jar');
 
         const command = 'java';
         const args: string[] = [
@@ -34,7 +34,7 @@ class DSLContribution extends BaseLanguageServerContribution {
 
     protected onDidFailSpawnProcess(error: Error): void {
         super.onDidFailSpawnProcess(error);
-        console.error("Error starting Kukulkan language server.", error)
+        console.error("Error starting kukulkan language server.", error)
     }
 
 }

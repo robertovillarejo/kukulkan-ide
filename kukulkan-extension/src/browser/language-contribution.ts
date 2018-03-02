@@ -5,7 +5,7 @@ import { Workspace, Languages, LanguageClientFactory, BaseLanguageClientContribu
 export class DslClientContribution extends BaseLanguageClientContribution {
 
     readonly id = "kukulkan";
-    readonly name = "Kukulkan";
+    readonly name = "kukulkan";
 
     constructor(
         @inject(Workspace) protected readonly workspace: Workspace,
@@ -29,7 +29,7 @@ export function registerDSL() {
     // initialize monaco
     monaco.languages.register({
         id: 'kukulkan',
-        aliases: ['Kukulkan', 'kukulkan'],
+        aliases: ['kukulkan'],
         extensions: ['.3k'],
         mimetypes: ['text/kukulkan']
     })
@@ -55,7 +55,7 @@ export function registerDSL() {
         // defaultToken: 'invalid',
 
         keywords: [
-            'entity', 'minlength', 'maxlength', 'min', 'max', 'minbytes', 'maxbytes', 'required', 'pattern'
+            'ManyToMany', 'ManyToOne', 'OneToMany', 'OneToOne', 'dto', 'entity', 'max', 'maxbytes', 'maxlength', 'min', 'minbytes', 'minlength', 'pattern', 'required'
         ],
 
         typeKeywords: [

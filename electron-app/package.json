@@ -2,29 +2,36 @@
   "private": true,
   "name": "electron-app",
   "version": "0.0.0",
+  "description": "The Kukulkan IDE",
   "dependencies": {
     "@theia/core": "latest",
-    "@theia/filesystem": "latest",
-    "@theia/workspace": "latest",
-    "@theia/preferences": "latest",
-    "@theia/navigator": "latest",
-    "@theia/process": "latest",
-    "@theia/terminal": "latest",
     "@theia/editor": "latest",
+    "@theia/filesystem": "latest",
     "@theia/languages": "latest",
     "@theia/markers": "latest",
-    "@theia/monaco": "latest",
-    "@theia/typescript": "latest",
     "@theia/messages": "latest",
+    "@theia/monaco": "latest",
+    "@theia/navigator": "latest",
+    "@theia/preferences": "latest",
+    "@theia/process": "latest",
+    "@theia/terminal": "latest",
+    "@theia/typescript": "latest",
+    "@theia/workspace": "latest",
     "kukulkan-extension": "0.0.0"
   },
   "devDependencies": {
-    "@theia/cli": "latest"
+    "@theia/cli": "latest",
+    "electron": "1.8.2",
+    "electron-installer-debian": "0.8.1",
+    "electron-packager": "11.0.1"
   },
   "scripts": {
-    "prepare": "theia build",    
+    "prepare": "theia build",
     "start": "theia start",
-    "watch": "theia build --watch"
+    "watch": "theia build --watch",
+    "package-linux": "electron-packager . kukulkan-ide --overwrite --platform=linux --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . kukulkan-ide --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Kukulkan IDE\"",
+    "create-debian-installer": "electron-installer-debian --src release-builds/kukulkan-ide-linux-x64/ --arch amd64 --config debian.json"
   },
   "theia": {
     "target": "electron"

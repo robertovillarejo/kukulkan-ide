@@ -1,5 +1,6 @@
 {
   "private": true,
+  "description": "The Kukulkan IDE",
   "scripts": {
     "prepare": "lerna run prepare",
     "rebuild:browser": "theia rebuild:browser",

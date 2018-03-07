@@ -1,5 +1,5 @@
 {
-  "name": "kukulkan-extension",
+  "name": "@theia/kukulkan-extension",
   "keywords": [
     "theia-extension"
   ],
@@ -24,7 +24,6 @@
   },
   "theiaExtensions": [
     {
-      
       "backend": "lib/node/kukulkan-backend-module",
       "frontend": "lib/browser/kukulkan-frontend-module"
     }

@@ -16,7 +16,7 @@
     "@theia/monaco": "latest",
     "@theia/typescript": "latest",
     "@theia/messages": "latest",
-    "kukulkan-extension": "0.0.0"
+    "@theia/kukulkan-extension": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "latest"
